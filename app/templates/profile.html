@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}Profile{% endblock %}
+
+{% block body %}
+{% include 'components/nav.html' %}
+
+<h1 class="title">Hello {{ user.name }}</h1>
+
+
+{% endblock %}

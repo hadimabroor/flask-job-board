@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block title %}Candidate login{% endblock %}
+
+{% block body %}
+{% include 'components/nav.html' %}
+
+<div class="section">
+	<div class="container">
+		<div class="box">
+			{% with messages = get_flashed_messages() %}
+			{% for message in messages %}
+			<div class="notification is-danger">
+				{{ message }}
+			</div>
+			{% endfor %}
+			{% endwith %}
+			<div class="form">
+				<form method="post">
+					<div class="field">
+						<div class="columns is-multiline is-centered">
+							<div class="column is-full">
+								<label class="label">Email</label>
+						    <div class="control has-icons-left">
+							    <input type="email" class="input" placeholder="eg: john@company.com" name="email">
+							    <span class="icon is-left"><i class="fa fa-envelope"></i></span>
+						    </div>
+							</div>
+							<div class="column is-full">
+								<label class="label">Password</label>
+						    <div class="control has-icons-left">
+							    <input type="password" class="input" placeholder="Password" name="password">
+							    <span class="icon is-left"><i class="fa fa-lock"></i></span>
+						    </div>
+						    </div>							
+							<div class="column buttons">
+								<button type="submit" class="button is-primary">Login</button>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+{% endblock %}

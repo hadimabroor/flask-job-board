@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+
+{% block title %}Candidate signup{% endblock %}
+
+{% block body %}
+{% include 'components/nav.html' %}
+
+
+<div class="section">
+	<div class="container">
+		<div class="box">
+			{% with messages = get_flashed_messages() %}
+			{% for message in messages %}
+			<div class="notification is-danger">
+				{{ message }}
+			</div>
+			{% endfor %}
+			{% endwith %}
+			<div class="tabs is-centered is-boxed">
+				<ul>
+				    <li class="is-active"><a>
+				    	<span class="icon"><i class="fa-solid fa-user" aria-hidden="true"></i></span>
+				        <span>Candidate</span>
+				    </a></li>
+				    <li><a href="{{ url_for('auth.biz_signup') }}">
+				    	<span class="icon"><i class="fa-solid fa-user-tie" aria-hidden="true"></i></span>
+				        <span>Employee</span>
+				    </a></li>
+			    </ul>
+			</div>
+			<div class="form">
+				<form method="post">
+					<div class="field">
+						<div class="columns is-multiline is-centered">
+							<div class="column is-half">
+								<label class="label">Name</label>
+						    <div class="control has-icons-left">
+							    <input type="text" class="input" placeholder="eg: John Doe" name="name">
+							    <span class="icon is-left"><i class="fa fa-user"></i></span>
+						    </div>
+							</div>
+							<div class="column is-half">
+								<label class="label">Username</label>
+						    <div class="control has-icons-left">
+							    <input type="text" class="input" placeholder="Username" name="username">
+							    <span class="icon is-left"><i class="fa fa-user"></i></span>
+						    </div>
+							</div>
+							<div class="column is-full">
+								<label class="label">Email</label>
+						    <div class="control has-icons-left">
+							    <input type="email" class="input" placeholder="eg: john@company.com" name="email">
+							    <span class="icon is-left"><i class="fa fa-envelope"></i></span>
+						    </div>
+							</div>
+							<div class="column is-half">
+								<label class="label">Password</label>
+						    <div class="control has-icons-left">
+							    <input type="password" class="input" placeholder="Password" name="password1">
+							    <span class="icon is-left"><i class="fa fa-lock"></i></span>
+						    </div>
+							</div>
+							<div class="column is-half">
+								<label class="label">Confirm Password</label>
+						    <div class="control has-icons-left">
+							    <input type="password" class="input" placeholder="Re enter password" name="password2">
+							    <span class="icon is-left"><i class="fa fa-lock"></i></span>
+						    </div>
+							</div>
+							<div class="column buttons">
+								<button type="submit" class="button is-primary">Signup</button>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+{% endblock %}
